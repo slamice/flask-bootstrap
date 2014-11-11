@@ -1,3 +1,10 @@
+import os
+import constants
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+SQLALCHEMY_DATABASE_URI = "postgresql://{username}:{password}@localhost/{dbname}".format(username=constants.DB_USERNAME,password=constants.DB_PASSWORD,dbname=constants.DB_NAME)
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 OPENID_PROVIDERS = [
